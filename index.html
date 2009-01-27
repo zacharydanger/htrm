@@ -1,1 +1,55 @@
-foobar
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  	<title>HTRM - post-commit deployment for Subversion</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<h1>HTRM | post-commit deployment for SVN</h1>
+	
+	<h2>About HTRM</h2>
+	<p>
+		HTRM is a post-commit script written in PHP that will deploy code to a remote server over SSH. The aim is to allow a branch or multiple branches to automatically refresh a live site after code has been committed. For instance if you keep a release branch of your project, anything committed to that branch can be automatically deployed to a live site when committed to SVN.
+	</p>
+	
+	<h2>Installation Instructions (beta)</h2>
+	<p>
+		HTRM requires the the SSH2 library for PHP be installed. Kevin van Zonneveld has a great tutorial for setting this up under Ubuntu/Debian which can be found <a href="http://kevin.vanzonneveld.net/techblog/article/make_ssh_connections_with_php/">here</a>.
+	</p>
+	<p>
+		Once the SSH2 library has been installed just untar htrm into your hooks folder. Rename the <em>config.template.php</em> file to config.php and make any necessary alterations.
+	</p>
+	<p>
+		Now, just symlink post-commit to htrm/htrm.php and make sure it's executable.
+	</p>
+	<pre>
+	ln -s /path/to/project/hooks/htrm.php /path/to/project/hooks/post-commit
+	chmod +x /path/to/project/hooks/post-commit
+	</pre>
+	
+	<h2>Download</h2>
+	<p>
+		<strike>Click here to download the latest version of HTRM.</strike>
+	</p>
+	<p>
+		<strong>Update:</strong> I've moved the code over to github.com. You can find it <a href="http://github.com/zacharydanger/htrm/tree/master">here</a>. Yes, I'm well aware of the irony, but I've recently seen the git light. And it helps that git <a href="http://toroid.org/ams/git-website-howto" target="_blank">can do what HTRM does</a> out of the box.
+	</p>
+	
+	<h2>Note:</h2>
+	<p>
+		Yes, I know this documentation is garbage, but I wanted to get it out the door as fast as possible. I'll clean it up at some point in the future. If you have any questions, feel free to contact me at the address below.
+	</p>
+	<hr />
+	<em>HTRM is written and maintained by <a href="http://zacharydangercampbell.com/">Zachary Danger Campbell</a> &lt;zacharydangercampbell@gmail.com&gt;</em>
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		try {
+			var pageTracker = _gat._getTracker("UA-3555341-6");
+			pageTracker._trackPageview();
+		} catch(err) {}
+	</script>
+</body>
+</html>
